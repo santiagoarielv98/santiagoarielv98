@@ -12,6 +12,10 @@ export default function App() {
         color: "text.primary",
         minHeight: "100%",
         display: "flex",
+        flexDirection: {
+          xs: "column-reverse",
+          sm: "row",
+        },
       }}
     >
       <Sidebar />
