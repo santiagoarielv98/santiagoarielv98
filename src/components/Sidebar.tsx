@@ -1,11 +1,12 @@
-import React from "react";
+import { Link, useParams } from "react-router-dom";
+
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { navItems } from "../constants/nav-items";
-import { Link } from "react-router-dom";
+
+import { NAV_ITEMS } from "../constants/nav-items";
 
 function a11yProps(index: number) {
   return {
@@ -16,11 +17,12 @@ function a11yProps(index: number) {
 
 export function Sidebar() {
   const matches = useMediaQuery("(min-width:600px)");
-  const [value, setValue] = React.useState(0);
+  const { currentSection = "" } = useParams();
+  const currentSlideIndex = NAV_ITEMS.findIndex(
+    (item) => item.href === `/${currentSection}`
+  );
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  
 
   return (
     <Box
@@ -32,8 +34,7 @@ export function Sidebar() {
       <Tabs
         key={matches ? 1 : 0}
         orientation={matches ? "vertical" : "horizontal"}
-        value={value}
-        onChange={handleChange}
+        value={currentSlideIndex}
         centered={!matches}
         sx={{
           flexShrink: 0,
@@ -44,7 +45,7 @@ export function Sidebar() {
           },
         }}
       >
-        {navItems.map((tab, index) => (
+        {NAV_ITEMS.map((tab, index) => (
           <Tab
             key={index}
             label={tab.label}

@@ -1,6 +1,6 @@
 /* para portfolio web personal */
 
-export const navItems = [
+export const NAV_ITEMS = [
   {
     label: "Home",
     href: "/",
@@ -17,4 +17,4 @@ export const navItems = [
     label: "Contact",
     href: "/contact",
   },
-];
+] as const;
