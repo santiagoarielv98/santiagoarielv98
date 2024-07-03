@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Button,
   Card,
@@ -10,44 +12,19 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import cocheriaRattiImg from "../../assets/cocheria-ratti.png";
-import CodoACodoImg from "../../assets/codo-a-codo.png";
-import SvFrontmentorSolutionsImg from "../../assets/sv-frontmentor-solutions.png";
-import SvCountryAppImg from "../../assets/sv-country-app.png";
+import { getProjects } from "../../services/api";
 
-const projects = [
-  {
-    title: "Cochería Ratti",
-    description: "Rediseño de la página web de la cocheriaratti.com.ar",
-    link: "https://github.com/santiagoarielv98/sv-cocheria-ratti",
-    image: cocheriaRattiImg,
-    deployed: "https://santiagoarielv98.github.io/sv-cocheria-ratti/",
-  },
-  {
-    title: "Soluciones Frontend Mentor",
-    description: "Soluciones a desafíos de Frontend Mentor.",
-    link: "https://github.com/santiagoarielv98/sv-frontmentor-solutions",
-    image: SvFrontmentorSolutionsImg,
-    deployed: "https://santiagoarielv98.github.io/sv-frontmentor-solutions/",
-  },
-  {
-    title: "Integrador Front 2 - Codo a Codo",
-    description: "Proyecto integrador del curso de Codo a Codo.",
-    link: "https://github.com/santiagoarielv98/codo-a-codo/tree/main/tp-integrador-front-2/codo-a-codo",
-    image: CodoACodoImg,
-    deployed:
-      "https://santiagoarielv98.github.io/codo-a-codo/tp-integrador-front-2/codo-a-codo/index.html",
-  },
-  {
-    title: "SV # World",
-    description: "Aplicación web para buscar información de países.",
-    link: "https://github.com/santiagoarielv98/sv-country-app",
-    image: SvCountryAppImg,
-    deployed: "https://sv-country-app.vercel.app/",
-  },
-];
+import type { Project } from "../../services/type";
 
 const Projects = () => {
+  const [projects, setProjects] = React.useState<Project[]>([]);
+
+  React.useEffect(() => {
+    getProjects().then((response) => {
+      setProjects(response?.projects ?? []);
+    });
+  }, []);
+
   return (
     <Container id="projects" sx={{ height: "100%", overflow: "auto", py: 3 }}>
       <Typography variant="h2" component="h2" gutterBottom>

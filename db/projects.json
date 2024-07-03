@@ -1,0 +1,32 @@
+{
+    "projects": [
+        {
+            "title": "Cochería Ratti",
+            "description": "Rediseño de la página web de la cocheriaratti.com.ar",
+            "link": "https://github.com/santiagoarielv98/sv-cocheria-ratti",
+            "image": "https://raw.githubusercontent.com/santiagoarielv98/santiagoarielv98/main/src/assets/cocheria-ratti.png",
+            "deployed": "https://santiagoarielv98.github.io/sv-cocheria-ratti/"
+        },
+        {
+            "title": "Soluciones Frontend Mentor",
+            "description": "Soluciones a desafíos de Frontend Mentor.",
+            "link": "https://github.com/santiagoarielv98/sv-frontmentor-solutions",
+            "image": "https://raw.githubusercontent.com/santiagoarielv98/santiagoarielv98/main/src/assets/sv-frontmentor-solutions.png",
+            "deployed": "https://santiagoarielv98.github.io/sv-frontmentor-solutions/"
+        },
+        {
+            "title": "Integrador Front 2 - Codo a Codo",
+            "description": "Proyecto integrador del curso de Codo a Codo.",
+            "link": "https://github.com/santiagoarielv98/codo-a-codo/tree/main/tp-integrador-front-2/codo-a-codo",
+            "image": "https://raw.githubusercontent.com/santiagoarielv98/santiagoarielv98/main/src/assets/codo-a-codo.png",
+            "deployed": "https://santiagoarielv98.github.io/codo-a-codo/tp-integrador-front-2/codo-a-codo/index.html"
+        },
+        {
+            "title": "SV # World",
+            "description": "Aplicación web para buscar información de países.",
+            "link": "https://github.com/santiagoarielv98/sv-country-app",
+            "image": "https://raw.githubusercontent.com/santiagoarielv98/santiagoarielv98/main/src/assets/sv-country-app.png",
+            "deployed": "https://sv-country-app.vercel.app/"
+        }
+    ]
+}

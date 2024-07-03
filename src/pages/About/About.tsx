@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Button,
   Chip,
@@ -8,13 +10,18 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import {
-  backEndSkills,
-  cloudAndDBSkills,
-  frontEndSkills,
-} from "../../constants/skills";
+import { getSkills } from "../../services/api";
+import { SkillsResponse } from "../../services/type";
 
 const About = () => {
+  const [skills, setSkills] = React.useState<SkillsResponse>();
+
+  React.useEffect(() => {
+    getSkills().then((response) => {
+      setSkills(response);
+    });
+  }, []);
+
   return (
     <Container id="about" sx={{ py: 3, height: "100%", overflow: "auto" }}>
       <Typography variant="h2" component="h2" gutterBottom>
@@ -45,7 +52,7 @@ const About = () => {
                 flexWrap: "wrap",
               }}
             >
-              {frontEndSkills.map((skill, index) => (
+              {skills?.frontEndSkills.map((skill, index) => (
                 <Chip key={index} label={skill} />
               ))}
             </ListItem>
@@ -65,7 +72,7 @@ const About = () => {
                 flexWrap: "wrap",
               }}
             >
-              {backEndSkills.map((skill, index) => (
+              {skills?.backEndSkills.map((skill, index) => (
                 <Chip key={index} label={skill} />
               ))}
             </ListItem>
@@ -85,7 +92,7 @@ const About = () => {
                 flexWrap: "wrap",
               }}
             >
-              {cloudAndDBSkills.map((skill, index) => (
+              {skills?.cloudAndDBSkills.map((skill, index) => (
                 <Chip key={index} label={skill} />
               ))}
             </ListItem>

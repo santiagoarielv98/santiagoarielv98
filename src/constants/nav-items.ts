@@ -1,5 +1,3 @@
-/* para portfolio web personal */
-
 export const NAV_ITEMS = [
   {
     label: "Home",
