@@ -22,8 +22,6 @@ export function Sidebar() {
     (item) => item.href === `/${currentSection}`
   );
 
-  
-
   return (
     <Box
       sx={{
@@ -38,7 +36,9 @@ export function Sidebar() {
         centered={!matches}
         sx={{
           flexShrink: 0,
-          height: "100%",
+          height: {
+            sm: "100%",
+          },
           py: {
             xs: 0.1,
             sm: 6,
