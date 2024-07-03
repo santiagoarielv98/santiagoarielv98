@@ -7,7 +7,6 @@ import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
 
 import { NAV_ITEMS } from "../constants/nav-items";
-
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
@@ -25,15 +24,25 @@ export function Sidebar() {
   return (
     <Box
       sx={{
-        borderRight: 1,
-        borderColor: "divider",
+        borderRight: {
+          xs: 0,
+          sm: 1,
+        },
+        borderTop: {
+          xs: 1,
+        },
+        borderColor: {
+          sm: "divider",
+          xs: "divider",
+        },
       }}
     >
       <Tabs
+        variant="scrollable"
+        scrollButtons={false}
         key={matches ? 1 : 0}
         orientation={matches ? "vertical" : "horizontal"}
         value={currentSlideIndex}
-        centered={!matches}
         sx={{
           flexShrink: 0,
           height: {

@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { register } from "swiper/element";
 
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
@@ -61,6 +60,10 @@ export default function MainLayout() {
         flexGrow: 1,
         bgcolor: "background.default",
         color: "text.primary",
+        flexDirection: {
+          xs: "column-reverse",
+          sm: "row",
+        },
       }}
     >
       <Sidebar />
@@ -68,14 +71,13 @@ export default function MainLayout() {
         sx={{
           flexGrow: 1,
           width: "100%",
+          overflow: "hidden",
         }}
       >
         <swiper-container ref={swiperRef} style={{ height: "100%" }}>
           {pages.map((Page, index) => (
             <swiper-slide key={index}>
-              <Container>
-                <Page />
-              </Container>
+              <Page />
             </swiper-slide>
           ))}
         </swiper-container>
