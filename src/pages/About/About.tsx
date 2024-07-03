@@ -1,13 +1,18 @@
 import {
   Button,
+  Chip,
   Container,
   Grid,
   List,
   ListItem,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import {
+  backEndSkills,
+  cloudAndDBSkills,
+  frontEndSkills,
+} from "../../constants/skills";
 
 const About = () => {
   return (
@@ -31,8 +36,18 @@ const About = () => {
             Frontend
           </Typography>
           <List>
-            <ListItem>
+            {/* <ListItem>
               <ListItemText primary="React, Angular, NextJs, TypeScript, Redux, MUI Core, SASS, Figma" />
+            </ListItem> */}
+            <ListItem
+              sx={{
+                gap: 1,
+                flexWrap: "wrap",
+              }}
+            >
+              {frontEndSkills.map((skill, index) => (
+                <Chip key={index} label={skill} />
+              ))}
             </ListItem>
           </List>
         </Grid>
@@ -41,8 +56,18 @@ const About = () => {
             Backend
           </Typography>
           <List>
-            <ListItem>
+            {/* <ListItem>
               <ListItemText primary="NestJs, Java, Spring Boot, Firebase, AWS, Docker" />
+            </ListItem> */}
+            <ListItem
+              sx={{
+                gap: 1,
+                flexWrap: "wrap",
+              }}
+            >
+              {backEndSkills.map((skill, index) => (
+                <Chip key={index} label={skill} />
+              ))}
             </ListItem>
           </List>
         </Grid>
@@ -51,8 +76,18 @@ const About = () => {
             Cloud y DB
           </Typography>
           <List>
-            <ListItem>
+            {/* <ListItem>
               <ListItemText primary="Firebase, AWS (incluyendo AWS Functions), MongoDB, MySQL, PostgreSQL, Sequelize, Mongoose" />
+            </ListItem> */}
+            <ListItem
+              sx={{
+                gap: 1,
+                flexWrap: "wrap",
+              }}
+            >
+              {cloudAndDBSkills.map((skill, index) => (
+                <Chip key={index} label={skill} />
+              ))}
             </ListItem>
           </List>
         </Grid>
