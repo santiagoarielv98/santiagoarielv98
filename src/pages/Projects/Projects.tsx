@@ -31,7 +31,8 @@ const Projects = () => {
         Proyectos
       </Typography>
       <Typography variant="body1" paragraph>
-        Aquí puedes ver algunos de mis proyectos destacados:
+        Estos son algunos de los proyectos en los que he trabajado
+        recientemente.
       </Typography>
       <Grid container spacing={4}>
         {projects.map((project, index) => (
