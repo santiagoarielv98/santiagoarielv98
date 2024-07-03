@@ -1,25 +1,11 @@
 import React from "react";
 
-import { MailLockOutlined } from "@mui/icons-material";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
-const tabs = [
-  {
-    label: "Tab 1",
-    icon: <MailLockOutlined />,
-  },
-  {
-    label: "Tab 2",
-    icon: <MailLockOutlined />,
-  },
-  {
-    label: "Tab 3",
-    icon: <MailLockOutlined />,
-  },
-];
+import { navItems } from "../constants/nav-items";
+import { Link } from "react-router-dom";
 
 function a11yProps(index: number) {
   return {
@@ -37,7 +23,12 @@ export function Sidebar() {
   };
 
   return (
-    <Box>
+    <Box
+      sx={{
+        borderRight: 1,
+        borderColor: "divider",
+      }}
+    >
       <Tabs
         key={matches ? 1 : 0}
         orientation={matches ? "vertical" : "horizontal"}
@@ -45,8 +36,6 @@ export function Sidebar() {
         onChange={handleChange}
         centered={!matches}
         sx={{
-          borderRight: 1,
-          borderColor: "divider",
           flexShrink: 0,
           height: "100%",
           py: {
@@ -55,12 +44,13 @@ export function Sidebar() {
           },
         }}
       >
-        {tabs.map((tab, index) => (
+        {navItems.map((tab, index) => (
           <Tab
             key={index}
             label={tab.label}
-            icon={tab.icon}
             {...a11yProps(index)}
+            component={Link}
+            to={tab.href}
           />
         ))}
       </Tabs>

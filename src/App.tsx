@@ -4,15 +4,19 @@ import MainLayout from "./layouts/MainLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/:currentSection",
+    path: "/",
     element: <MainLayout />,
+    children: [
+      {
+        path: "/:currentSection",
+        element: null,
+      },
+    ],
   },
 ]);
 
 export default function App() {
   return (
-    <div>
       <RouterProvider router={router} />
-    </div>
   );
 }
