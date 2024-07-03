@@ -16,7 +16,7 @@ import {
 
 const About = () => {
   return (
-    <Container id="about" sx={{ height: "100%", overflow: "auto", py: 3 }}>
+    <Container id="about" sx={{ py: 3, height: "100%", overflow: "auto" }}>
       <Typography variant="h2" component="h2" gutterBottom>
         Acerca De
       </Typography>

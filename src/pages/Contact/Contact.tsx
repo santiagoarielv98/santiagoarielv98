@@ -19,9 +19,9 @@ const Contact = () => {
         Contacto
       </Typography>
       <Typography variant="body1" paragraph>
-        Puedes contactarme a través de las siguientes plataformas:
+        Puedes contactarme en las siguientes plataformas
       </Typography>
-      <List>
+      <List sx={{ zIndex: 999 }}>
         <ListItem>
           <ListItemIcon>
             <EmailIcon />
@@ -42,10 +42,13 @@ const Contact = () => {
           <ListItemIcon>
             <LinkedInIcon />
           </ListItemIcon>
-          <ListItemText primary="LinkedIn" secondary="Santiago Villanueva" />
+          <ListItemText
+            primary="LinkedIn"
+            secondary="Santiago Ariel Villanueva"
+          />
           <IconButton
             component="a"
-            href="https://www.linkedin.com/in/tuusuario"
+            href="https://www.linkedin.com/in/santiagoarielv"
             target="_blank"
             color="primary"
           >
@@ -56,10 +59,10 @@ const Contact = () => {
           <ListItemIcon>
             <GitHubIcon />
           </ListItemIcon>
-          <ListItemText primary="GitHub" secondary="tuusuario" />
+          <ListItemText primary="GitHub" secondary="santiagoarielv98" />
           <IconButton
             component="a"
-            href="https://github.com/tuusuario"
+            href="https://github.com/santiagoarielv98"
             target="_blank"
             color="primary"
           >

@@ -17,23 +17,38 @@ import { NAV_ITEMS } from "../constants/nav-items";
 
 import type Swiper from "swiper";
 import type { SwiperContainer } from "swiper/element";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const pages = [Home, About, Projects, Contact];
 
 export default function MainLayout() {
+  const theme = useTheme();
   const navigate = useNavigate();
   const swiperRef = React.useRef<SwiperContainer>(null);
   const { currentSection = "" } = useParams();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   React.useEffect(() => {
     register();
 
-    const params = {};
-
-    Object.assign(swiperRef.current!, params);
-
     swiperRef.current?.initialize();
   }, []);
+
+  React.useEffect(() => {
+    if (!swiperRef.current) return;
+
+    const params = isMobile
+      ? {
+          direction: "horizontal",
+          scrollbar: false,
+        }
+      : {
+          direction: "vertical",
+          scrollbar: true,
+        };
+
+    Object.assign(swiperRef.current!, params);
+  }, [isMobile]);
 
   React.useEffect(() => {
     swiperRef!.current?.addEventListener("swiperslidechange", (el: unknown) => {
