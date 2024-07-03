@@ -26,7 +26,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Container id="projects" sx={{ height: "100%", overflow: "auto", py: 3 }}>
+    <Container id="projects" sx={{ py: 3 }}>
       <Typography variant="h2" component="h2" gutterBottom>
         Proyectos
       </Typography>

@@ -91,7 +91,10 @@ export default function MainLayout() {
       >
         <swiper-container ref={swiperRef} style={{ height: "100%" }}>
           {pages.map((Page, index) => (
-            <swiper-slide key={index}>
+            <swiper-slide
+              key={index}
+              style={{ height: "100%", overflow: "auto" }}
+            >
               <Page />
             </swiper-slide>
           ))}
