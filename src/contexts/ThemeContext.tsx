@@ -4,7 +4,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import darkTheme from "../themes/dark-theme";
 import lightTheme from "../themes/light-theme";
-import { CssBaseline, ThemeProvider as MuiThemeProvider } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 
 export type ThemeMode = "light" | "dark" | "system";
 

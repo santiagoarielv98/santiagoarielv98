@@ -9,6 +9,11 @@ import { Sidebar } from "../components/Sidebar";
 import { NAV_ITEMS } from "../constants/nav-items";
 import Swiper from "swiper";
 
+import Home from "../pages/Home/Home";
+import About from "../pages/About/About";
+import Projects from "../pages/Projects/Projects";
+import Contact from "../pages/Contact/Contact";
+
 export default function MainLayout() {
   const navigate = useNavigate();
   const swiperElRef = React.useRef<SwiperContainer>(null);
@@ -52,10 +57,18 @@ export default function MainLayout() {
         }}
       >
         <swiper-container ref={swiperElRef} style={{ height: "100%" }}>
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          <swiper-slide>Slide 4</swiper-slide>
+          <swiper-slide>
+            <Home />
+          </swiper-slide>
+          <swiper-slide>
+            <About />
+          </swiper-slide>
+          <swiper-slide>
+            <Projects />
+          </swiper-slide>
+          <swiper-slide>
+            <Contact />
+          </swiper-slide>
         </swiper-container>
       </Box>
     </Box>
