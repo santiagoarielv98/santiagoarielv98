@@ -1,5 +1,6 @@
 import { Container, Typography, Button, Box, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../../services/api";
 
 export default function Home() {
   return (
@@ -59,15 +60,32 @@ export default function Home() {
           Soy un Desarrollador Full Stack apasionado por la creación de
           aplicaciones web eficientes y de alto rendimiento.
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          sx={{ mt: 3 }}
-          component={Link}
-          to="/about"
+
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            mt: 3,
+          }}
         >
-          Conoce Más
-        </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/about"
+          >
+            Conoce Más
+          </Button>
+          <Button
+            variant="outlined"
+            color="primary"
+            component={Link}
+            to={baseUrl + "/public/RESUME_SANTIAGO_VILLANUEVA_2024.pdf"}
+            download={baseUrl + "/public/RESUME_SANTIAGO_VILLANUEVA_2024.pdf"}
+          >
+            Descargar CV (PDF)
+          </Button>
+        </Box>
       </Container>
     </Box>
   );
