@@ -26,7 +26,12 @@ const Projects = () => {
   }, []);
 
   return (
-    <Container id="projects" sx={{ py: 3 }}>
+    <Container
+      sx={{ py: 3 }}
+      // hidden={value !== index}
+      id="vertical-tabpanel-2"
+      aria-labelledby="vertical-tab-2"
+    >
       <Typography variant="h2" component="h2" gutterBottom>
         Proyectos
       </Typography>
@@ -43,6 +48,7 @@ const Projects = () => {
                 height="140"
                 image={project.image}
                 alt={project.title}
+                loading="lazy"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -58,6 +64,7 @@ const Projects = () => {
                   color="primary"
                   href={project.link}
                   target="_blank"
+                  aria-label="Ver Proyecto"
                 >
                   Ver Proyecto
                 </Button>
@@ -67,6 +74,7 @@ const Projects = () => {
                     color="primary"
                     href={project.deployed}
                     target="_blank"
+                    aria-label="Ver Demo"
                   >
                     Ver Demo
                   </Button>
@@ -82,6 +90,7 @@ const Projects = () => {
         sx={{ mt: 3 }}
         component={Link}
         to="/contact"
+        aria-label="Contáctame"
       >
         ¡Contáctame!
       </Button>

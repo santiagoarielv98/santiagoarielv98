@@ -7,6 +7,7 @@ import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
 
 import { NAV_ITEMS } from "../constants/nav-items";
+import Avatar from "@mui/material/Avatar";
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
@@ -37,6 +38,26 @@ export function Sidebar() {
         },
       }}
     >
+      <Box
+        component={Link}
+        to="/"
+        aria-label="Santiago Ariel Villanueva"
+        sx={{
+          justifyContent: "center",
+          py: 2,
+          display: {
+            xs: "none",
+            sm: "flex",
+          },
+        }}
+      >
+        <Avatar
+          src="https://raw.githubusercontent.com/santiagoarielv98/santiagoarielv98/main/src/assets/logo.svg"
+          alt="Santiago Ariel Villanueva"
+          variant="square"
+        />
+      </Box>
+
       <Tabs
         variant="scrollable"
         scrollButtons={false}

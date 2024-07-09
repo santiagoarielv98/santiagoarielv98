@@ -83,7 +83,12 @@ const Contact = () => {
   };
 
   return (
-    <Container id="contact" sx={{ height: "100%", overflow: "auto", py: 3 }}>
+    <Container
+      sx={{ height: "100%", overflow: "auto", py: 3 }}
+      // hidden={value !== index}
+      id="vertical-tabpanel-3"
+      aria-labelledby="vertical-tab-3"
+    >
       <Typography variant="h2" component="h2" gutterBottom>
         Contacto
       </Typography>
@@ -127,7 +132,10 @@ const Contact = () => {
         {contactInfo.map((info, index) => (
           <ListItem key={index}>
             <ListItemIcon>
-              <IconButton onClick={() => handleCopy(info.secondary)}>
+              <IconButton
+                onClick={() => handleCopy(info.secondary)}
+                aria-label={`Copiar ${info.primary}`}
+              >
                 {info.icon}
               </IconButton>
             </ListItemIcon>
@@ -138,13 +146,19 @@ const Contact = () => {
               color="primary"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Ir a ${info.primary}`}
             >
               {info.icon}
             </IconButton>
           </ListItem>
         ))}
       </List>
-      <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+      <Snackbar
+        role="status"
+        open={open}
+        autoHideDuration={5000}
+        onClose={handleClose}
+      >
         <Alert
           onClose={handleClose}
           severity={severity}

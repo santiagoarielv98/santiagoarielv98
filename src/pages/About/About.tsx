@@ -23,7 +23,12 @@ const About = () => {
   }, []);
 
   return (
-    <Container id="about" sx={{ py: 3, height: "100%", overflow: "auto" }}>
+    <Container
+      sx={{ py: 3, height: "100%", overflow: "auto" }}
+      // hidden={value !== index}
+      id="vertical-tabpanel-1"
+      aria-labelledby="vertical-tab-1"
+    >
       <Typography variant="h2" component="h2" gutterBottom>
         Acerca De
       </Typography>
@@ -105,6 +110,7 @@ const About = () => {
         sx={{ mt: 3 }}
         component={Link}
         to="/projects"
+        aria-label="Mira mis Proyectos"
       >
         !Mira mis Proyectos!
       </Button>

@@ -67,6 +67,7 @@ export default function MainLayout() {
 
   return (
     <Box
+      component="aside"
       sx={{
         display: "flex",
         height: "100%",
@@ -83,6 +84,7 @@ export default function MainLayout() {
     >
       <Sidebar />
       <Box
+        component="main"
         sx={{
           flexGrow: 1,
           width: "100%",
