@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 import { register } from "swiper/element";
 
@@ -17,7 +18,6 @@ import { NAV_ITEMS } from "../constants/nav-items";
 
 import type Swiper from "swiper";
 import type { SwiperContainer } from "swiper/element";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 const pages = [Home, About, Projects, Contact];
 
