@@ -4,15 +4,15 @@ export const NAV_ITEMS = [
     href: "/",
   },
   {
-    label: "About",
+    label: "Acerca de",
     href: "/about",
   },
   {
-    label: "Projects",
+    label: "Proyectos",
     href: "/projects",
   },
   {
-    label: "Contact",
+    label: "Contacto",
     href: "/contact",
   },
 ] as const;
