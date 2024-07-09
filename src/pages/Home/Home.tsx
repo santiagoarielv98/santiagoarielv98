@@ -81,7 +81,7 @@ export default function Home() {
             color="primary"
             component={Link}
             to={baseUrl + "/public/RESUME_SANTIAGO_VILLANUEVA_2024.pdf"}
-            download={baseUrl + "/public/RESUME_SANTIAGO_VILLANUEVA_2024.pdf"}
+            // download={baseUrl + "/public/RESUME_SANTIAGO_VILLANUEVA_2024.pdf"}
           >
             Descargar CV (PDF)
           </Button>

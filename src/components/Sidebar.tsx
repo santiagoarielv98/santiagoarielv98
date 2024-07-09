@@ -52,6 +52,14 @@ export function Sidebar() {
             xs: 0.1,
             sm: 6,
           },
+          "& .MuiTabs-flexContainer	": {
+            width: {
+              xs: "max-content",
+            },
+            margin: {
+              xs: "auto",
+            },
+          },
         }}
       >
         {NAV_ITEMS.map((tab, index) => (

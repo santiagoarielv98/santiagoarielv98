@@ -104,7 +104,6 @@ const Contact = () => {
           label="Toca el icono de la izquierda para copiar el contenido"
           color="default"
           variant="outlined"
-          textAlign="center"
           size="small"
           sx={{
             // 12px
@@ -116,7 +115,6 @@ const Contact = () => {
           label="Toca el icono de la derecha para abrir la enlace"
           color="default"
           variant="outlined"
-          textAlign="center"
           size="small"
           sx={{
             // 12px
