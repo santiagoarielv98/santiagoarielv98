@@ -14,7 +14,7 @@ import { baseUrl } from "../../constants/app";
 import type { Project, ProjectsResponse } from "../../interfaces/response";
 
 export function Component() {
-  const projects = useLoaderData() as Project[];
+  const { projects } = useLoaderData() as { projects: Project[] };
 
   return (
     <Container
