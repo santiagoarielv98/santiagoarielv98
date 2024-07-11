@@ -1,13 +1,14 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import Box from "@mui/material/Box";
 
-import { NAV_ITEMS } from "../constants/nav-items";
 import Avatar from "@mui/material/Avatar";
+import { NAV_ITEMS } from "../constants/nav-items";
+
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
@@ -15,12 +16,10 @@ function a11yProps(index: number) {
   };
 }
 
-export function Sidebar() {
+export default function Sidebar() {
   const matches = useMediaQuery("(min-width:600px)");
-  const { currentSection = "" } = useParams();
-  const currentSlideIndex = NAV_ITEMS.findIndex(
-    (item) => item.href === `/${currentSection}`
-  );
+  const { pathname } = useLocation();
+  const currentSlideIndex = NAV_ITEMS.findIndex((i) => i.href === pathname);
 
   return (
     <Box

@@ -1,6 +1,7 @@
 import { Container, Typography, Button, Box, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
-import { baseUrl } from "../../services/api";
+
+import { baseUrl } from "../../constants/app";
 
 export default function Home() {
   return (

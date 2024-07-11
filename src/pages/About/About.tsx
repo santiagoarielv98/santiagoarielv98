@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Button,
   Chip,
@@ -9,18 +7,16 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import { getSkills } from "../../services/api";
-import { SkillsResponse } from "../../services/type";
+import { Link, useLoaderData } from "react-router-dom";
+import { SkillsResponse } from "../../interfaces/response";
+import { baseUrl } from "../../constants/app";
 
-const About = () => {
-  const [skills, setSkills] = React.useState<SkillsResponse>();
+export async function loader(): Promise<SkillsResponse> {
+  return fetch(`${baseUrl}/db/skills.json`).then((res) => res.json());
+}
 
-  React.useEffect(() => {
-    getSkills().then((response) => {
-      setSkills(response);
-    });
-  }, []);
+export function Component() {
+  const skills = useLoaderData() as SkillsResponse;
 
   return (
     <Container
@@ -116,6 +112,4 @@ const About = () => {
       </Button>
     </Container>
   );
-};
-
-export default About;
+}

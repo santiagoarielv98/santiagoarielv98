@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Button,
   Card,
@@ -10,20 +8,13 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-import { getProjects } from "../../services/api";
+import { baseUrl } from "../../constants/app";
+import type { Project, ProjectsResponse } from "../../interfaces/response";
 
-import type { Project } from "../../services/type";
-
-const Projects = () => {
-  const [projects, setProjects] = React.useState<Project[]>([]);
-
-  React.useEffect(() => {
-    getProjects().then((response) => {
-      setProjects(response?.projects ?? []);
-    });
-  }, []);
+export function Component() {
+  const { projects } = useLoaderData() as { projects: Project[] };
 
   return (
     <Container
@@ -96,6 +87,8 @@ const Projects = () => {
       </Button>
     </Container>
   );
-};
+}
 
-export default Projects;
+export async function loader(): Promise<ProjectsResponse> {
+  return fetch(`${baseUrl}/db/projects.json`).then((res) => res.json());
+}
