@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 
 import { NAV_ITEMS } from "../constants/nav-items";
 import Avatar from "@mui/material/Avatar";
+
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
