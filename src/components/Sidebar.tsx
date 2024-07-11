@@ -16,7 +16,7 @@ function a11yProps(index: number) {
   };
 }
 
-export function Sidebar() {
+export default function Sidebar() {
   const matches = useMediaQuery("(min-width:600px)");
   const { pathname } = useLocation();
   const currentSlideIndex = NAV_ITEMS.findIndex((i) => i.href === pathname);
