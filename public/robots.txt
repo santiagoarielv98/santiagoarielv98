@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://sv-dev.tech/sitemap.xml
