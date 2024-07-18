@@ -1,3 +1,5 @@
+import React from "react";
+
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -19,7 +21,9 @@ import { socials } from "../constants/contact";
 import { sendMessage } from "../services/api";
 
 export default function Contact() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [loading, setLoading] = React.useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const payload = {
@@ -28,7 +32,13 @@ export default function Contact() {
       subject: form.get("subject") as string,
       message: form.get("message") as string,
     };
-    sendMessage(payload);
+    try {
+      setLoading(true);
+      await sendMessage(payload);
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <Section id="contact">
@@ -81,6 +91,7 @@ export default function Contact() {
                     id="name"
                     name="name"
                     inputProps={{
+                      autoComplete: "name",
                       minLength: 3,
                       maxLength: 50,
                     }}
@@ -94,6 +105,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     inputProps={{
+                      autoComplete: "email",
                       minLength: 3,
                       maxLength: 100,
                     }}
@@ -121,7 +133,7 @@ export default function Contact() {
                   />
                 </Grid>
               </Grid>
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={loading}>
                 Enviar mensaje
               </Button>
             </Box>
