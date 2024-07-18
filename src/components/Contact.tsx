@@ -24,8 +24,10 @@ export default function Contact() {
   const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formEl = event.currentTarget;
+    const form = new FormData(formEl);
     const payload = {
       name: form.get("name") as string,
       email: form.get("email") as string,
@@ -33,11 +35,11 @@ export default function Contact() {
       message: form.get("message") as string,
     };
     try {
-      setLoading(true);
       await sendMessage(payload);
     } catch (error) {
     } finally {
       setLoading(false);
+      formEl.reset();
     }
   };
   return (
@@ -125,6 +127,7 @@ export default function Contact() {
                     multiline
                     rows={4}
                     inputProps={{
+                      minLength: 5,
                       maxLength: 1000,
                     }}
                     label="Mensaje"
