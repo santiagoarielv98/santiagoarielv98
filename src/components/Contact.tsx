@@ -17,9 +17,9 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 import Section from "./Section";
 
+import Snackbar from "@mui/material/Snackbar";
 import { socials } from "../constants/contact";
 import { sendMessage } from "../services/api";
-import Snackbar from "@mui/material/Snackbar";
 
 export default function Contact() {
   const [state, setState] = React.useState({
@@ -45,13 +45,7 @@ export default function Contact() {
       await sendMessage(payload); // fetch(...) error: {"error":"Rate limit exceeded"}
       setState({ message: "Mensaje enviado con éxito", open: true, severity: "success" });
     } catch (error) {
-      /* rate limit */
-      console.log([error]);
-      if ((error as Error).message === "429") {
-        setState({ message: "¡Espera un momento! Estás enviando mensajes muy rápido.", open: true, severity: "error" });
-      } else {
-        setState({ message: "Ocurrió un error al enviar el mensaje", open: true, severity: "error" });
-      }
+      setState({ message: "¡Espera un momento! Estás enviando mensajes muy rápido.", open: true, severity: "error" });
     } finally {
       setLoading(false);
       formEl.reset();
