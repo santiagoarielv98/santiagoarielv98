@@ -19,9 +19,16 @@ import Section from "./Section";
 
 import { socials } from "../constants/contact";
 import { sendMessage } from "../services/api";
+import Snackbar from "@mui/material/Snackbar";
 
 export default function Contact() {
+  const [state, setState] = React.useState({
+    message: "",
+    open: false,
+    severity: "success",
+  });
   const [loading, setLoading] = React.useState(false);
+  const { open } = state;
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
@@ -35,13 +42,26 @@ export default function Contact() {
       message: form.get("message") as string,
     };
     try {
-      await sendMessage(payload);
+      await sendMessage(payload); // fetch(...) error: {"error":"Rate limit exceeded"}
+      setState({ message: "Mensaje enviado con éxito", open: true, severity: "success" });
     } catch (error) {
+      /* rate limit */
+      console.log([error]);
+      if ((error as Error).message === "429") {
+        setState({ message: "¡Espera un momento! Estás enviando mensajes muy rápido.", open: true, severity: "error" });
+      } else {
+        setState({ message: "Ocurrió un error al enviar el mensaje", open: true, severity: "error" });
+      }
     } finally {
       setLoading(false);
       formEl.reset();
     }
   };
+
+  const handleClose = () => {
+    setState({ message: "", open: false, severity: "success" });
+  };
+
   return (
     <Section id="contact">
       <Container>
@@ -142,6 +162,12 @@ export default function Contact() {
             </Box>
           </Grid>
         </Grid>
+        <Snackbar
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          open={open}
+          onClose={handleClose}
+          message="I love snacks"
+        />
       </Container>
     </Section>
   );

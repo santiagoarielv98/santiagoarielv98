@@ -8,7 +8,7 @@ export interface SendMessagePayload {
 }
 
 export async function sendMessage(body: SendMessagePayload) {
-  fetch(`${apiUrl}/api/send`, {
+  return fetch(`${apiUrl}/api/send`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
