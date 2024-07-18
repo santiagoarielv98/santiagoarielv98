@@ -166,7 +166,9 @@ export default function Contact() {
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           open={open}
           onClose={handleClose}
-          message="I love snacks"
+          message={state.message}
+          autoHideDuration={6000}
+          color={state.severity}
         />
       </Container>
     </Section>
