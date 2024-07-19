@@ -21,10 +21,10 @@ export default function Projects() {
         <Typography variant="h3" align="center" gutterBottom>
           Proyectos
         </Typography>
-        <Typography variant="body1" align="center" paragraph>
+        {/* <Typography variant="body1" align="center" paragraph>
           Aquí encontrarás una selección de mis proyectos más destacados. (Próximamente agregaré tarjetas con detalles
           específicos de cada proyecto.)
-        </Typography>
+        </Typography> */}
       </Container>
       <Container>
         <Grid container spacing={2}>

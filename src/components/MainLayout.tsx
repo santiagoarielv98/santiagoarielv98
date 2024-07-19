@@ -42,6 +42,10 @@ export default function MainLayout(props: ResponsiveDrawerProps) {
         styles={{
           ":root": {
             scrollBehavior: "smooth",
+            textRendering: "optimizeLegibility",
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale",
+            textWrap: "balance",
           },
         }}
       />

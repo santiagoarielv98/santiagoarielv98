@@ -62,10 +62,11 @@ export default function Contact() {
         <Typography variant="h3" align="center" gutterBottom>
           Contacto
         </Typography>
-        <Typography variant="body1" align="center" paragraph>
-          ¡Me encantaría saber de ti! Completa el formulario a continuación para enviarme un mensaje y me pondré en
-          contacto contigo lo antes posible.
-        </Typography>
+        {/* <Typography variant="body1" align="center" paragraph> */}
+        {/* ¡Me encantaría saber de ti! */}
+        {/*  Completa el formulario a continuación para enviarme un mensaje y me pondré
+          en contacto contigo lo antes posible.
+        </Typography> */}
       </Container>
       <Container>
         <Grid container spacing={2}>

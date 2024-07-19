@@ -20,12 +20,13 @@ export default function About() {
         <Typography variant="h3" align="center" gutterBottom>
           Sobre mi
         </Typography>
-        <Typography variant="body1" align="center" paragraph>
+        {/* <Typography variant="body1" align="center" paragraph>
           ¡Hola! Soy Santiago Villanueva, un desarrollador web full stack apasionado por la creación de aplicaciones web
-          eficientes y de alto rendimiento. Comprometido con el uso de las últimas tecnologías y prácticas de desarrollo
+          eficientes y de alto rendimiento. */}
+        {/* Comprometido con el uso de las últimas tecnologías y prácticas de desarrollo
           para ofrecer soluciones innovadoras. Con experiencia en desarrollo frontend y backend, siempre buscando nuevos
-          retos y oportunidades para crecer profesionalmente.
-        </Typography>
+          retos y oportunidades para crecer profesionalmente. */}
+        {/* </Typography> */}
       </Container>
       <Container>
         <Grid container spacing={2}>
@@ -46,13 +47,25 @@ export default function About() {
             />
           </Grid>
           <Grid item xs={12} lg={8}>
-            <Typography variant="h4" gutterBottom align="center">
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
               Desarrollador Web (Full Stack)
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              variant="body1"
+              paragraph
+              sx={{
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
               Desarrollador con experiencia en React, Angular, Java, Spring Boot, TypeScript y NestJS. Especializado en
               la creación de interfaces de usuario intuitivas y funcionales, así como en la implementación de sistemas
-              backend robustos y escalables.
+              backend robustos{/*  y escalables */}.
             </Typography>
 
             <Grid container py={2}>
@@ -89,10 +102,18 @@ export default function About() {
                 </List>
               </Grid>
             </Grid>
-            <Typography variant="body1" gutterBottom>
-              Con un enfoque en la mejora continua y la adopción de nuevas tecnologías, he trabajado en proyectos que
+            <Typography
+              variant="body1"
+              gutterBottom
+              sx={{
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
+              Con un enfoque en la mejora continua y la adopción de nuevas tecnologías
+              {/* , he trabajado en proyectos que
               abarcan desde la optimización de interfaces de usuario hasta la implementación de servicios backend
-              complejos. Siempre dispuesto a aprender y a colaborar en equipos dinámicos y multidisciplinarios.
+              complejos */}
+              . Siempre dispuesto a aprender y a colaborar en equipos dinámicos y multidisciplinarios.
             </Typography>
           </Grid>
         </Grid>

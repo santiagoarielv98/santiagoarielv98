@@ -18,23 +18,26 @@ export default function Skills() {
         <Typography variant="h3" align="center" gutterBottom>
           Skills
         </Typography>
-        <Typography variant="body1" align="center" paragraph>
-          Mis habilidades abarcan tres áreas principales: Frontend, Backend y Cloud. A continuación, un vistazo rápido a
-          cada una y las tecnologías que manejo.
-        </Typography>
+        {/* <Typography variant="body1" align="center" paragraph>
+          Mis habilidades abarcan tres áreas principales: Frontend, Backend y Cloud. */}
+        {/*  A continuación, un vistazo rápido a
+          cada una y las tecnologías que manejo. */}
+        {/* </Typography> */}
       </Container>
       <Container>
-        <Grid container spacing={2} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center">
           {skills.map((skill, index) => (
-            <Grid key={index} item lg={4} md={6} xs={12}>
-              <Box sx={{ display: "flex", flexDirection: "column", p: 2, gap: 2, alignItems: "center" }}>
+            <Grid key={index} item md={4} sm={6} xs={12}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 2, alignItems: "center" }}>
                 <Avatar alt={skill.title} color={skill.color}>
                   {skill.icon}
                 </Avatar>
                 <Typography variant="h4">{skill.title}</Typography>
-                <Typography variant="body1" paragraph>
-                  {skill.description}
-                </Typography>
+                {skill.description && (
+                  <Typography variant="body1" paragraph>
+                    {skill.description}
+                  </Typography>
+                )}
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <List dense>
                     {skill.tools.map((tool, index) => (
@@ -49,13 +52,13 @@ export default function Skills() {
           ))}
         </Grid>
       </Container>
-      <Container>
+      {/* <Container>
         <Typography variant="body1" gutterBottom>
           Además, utilizo herramientas como Jira para la gestión de proyectos, Docker para la implementación de
           contenedores y diversas tecnologías para asegurar que cada proyecto sea exitoso desde el inicio hasta el
           final.
         </Typography>
-      </Container>
+      </Container> */}
     </Section>
   );
 }
