@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function useScrollSpy() {
-  const [activeSection, setActiveSection] = React.useState("");
+  const hash = window.location.hash.slice(1);
+  const [activeSection, setActiveSection] = React.useState(hash);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,10 @@ export default function useScrollSpy() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  React.useEffect(() => {
+    document.getElementById(hash)?.scrollIntoView();
+  }, [hash]);
 
   return activeSection;
 }

@@ -33,11 +33,11 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <Box component="header">
-      <Toolbar sx={{ py: 2, justifyContent: "center" }}>
+      <Toolbar sx={{ py: 1, justifyContent: "center" }}>
         <Avatar alt="Avatar de Santiago" src={Profile} sx={{ width: 100, height: 100 }} />
       </Toolbar>
       <Divider />
-      <Stack direction="row" justifyContent="center" py={2}>
+      <Stack direction="row" justifyContent="center" py={1}>
         <Box component="label" htmlFor={switchThemeModeId} display="none" aria-hidden>
           Cambiar tema
         </Box>
@@ -58,7 +58,7 @@ export default function Navbar(props: NavbarProps) {
       </Box>
       <Divider />
 
-      <Stack direction="row" spacing={1} py={2} justifyContent="center">
+      <Stack direction="row" spacing={1} py={1} justifyContent="center">
         {socials.slice(0, -1).map((social, index) => (
           <IconButton
             key={index}
