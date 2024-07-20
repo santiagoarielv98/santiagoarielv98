@@ -2,9 +2,7 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
-import GlobalStyles from "@mui/material/GlobalStyles";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -38,18 +36,6 @@ export default function MainLayout(props: ResponsiveDrawerProps) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <GlobalStyles
-        styles={{
-          ":root": {
-            scrollBehavior: "smooth",
-            textRendering: "optimizeLegibility",
-            WebkitFontSmoothing: "antialiased",
-            MozOsxFontSmoothing: "grayscale",
-            textWrap: "balance",
-          },
-        }}
-      />
-      <CssBaseline />
       <Button
         centerRipple
         variant="contained"

@@ -2,6 +2,8 @@ import React from "react";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import CssBaseline from "@mui/material/CssBaseline";
+import GlobalStyles from "@mui/material/GlobalStyles";
 
 import { ColorMode } from "../constants/theme";
 
@@ -47,6 +49,18 @@ export const ColorModeProvider = (props: ColorModeProviderProps) => {
 
   return (
     <ColorModeContext.Provider value={{ toggleColorMode, colorMode }}>
+      <GlobalStyles
+        styles={{
+          ":root": {
+            scrollBehavior: "smooth",
+            textRendering: "optimizeLegibility",
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale",
+            textWrap: "balance",
+          },
+        }}
+      />
+      <CssBaseline />
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ColorModeContext.Provider>
   );

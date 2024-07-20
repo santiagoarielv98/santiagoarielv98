@@ -10,13 +10,15 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import LaunchIcon from "@mui/icons-material/Launch";
 
 import Section from "./Section";
 
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import Snackbar from "@mui/material/Snackbar";
 import { socials } from "../constants/contact";
 import { sendMessage } from "../services/api";
@@ -102,55 +104,7 @@ export default function Contact() {
           </Grid>
           <Grid item xs={12} lg={8}>
             <Box component="form" sx={{ mt: 3 }} onSubmit={handleSubmit}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    id="name"
-                    name="name"
-                    inputProps={{
-                      autoComplete: "name",
-                      minLength: 3,
-                      maxLength: 50,
-                    }}
-                    fullWidth
-                    label="Tu Nombre"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    id="email"
-                    name="email"
-                    inputProps={{
-                      autoComplete: "email",
-                      minLength: 3,
-                      maxLength: 100,
-                    }}
-                    fullWidth
-                    type="email"
-                    label="Tu correo electrónico"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField name="subject" fullWidth label="Asunto" />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    name="message"
-                    fullWidth
-                    multiline
-                    rows={4}
-                    inputProps={{
-                      minLength: 5,
-                      maxLength: 1000,
-                    }}
-                    label="Mensaje"
-                    placeholder="Escribe tu mensaje aquí"
-                    required
-                  />
-                </Grid>
-              </Grid>
+              <ContactForm />
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={loading}>
                 Enviar mensaje
               </Button>
@@ -167,5 +121,73 @@ export default function Contact() {
         />
       </Container>
     </Section>
+  );
+}
+
+function ContactForm() {
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor="name">Tu Nombre</InputLabel>
+          <OutlinedInput
+            id="name"
+            label="Tu Nombre"
+            inputProps={{
+              autoComplete: "name",
+              minLength: 3,
+              maxLength: 50,
+            }}
+            required
+          />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor="email">Email</InputLabel>
+          <OutlinedInput
+            id="email"
+            label="Email"
+            inputProps={{
+              autoComplete: "email",
+              minLength: 3,
+              maxLength: 100,
+            }}
+            type="email"
+            required
+          />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor="subject">Asunto</InputLabel>
+          <OutlinedInput
+            id="subject"
+            label="Asunto"
+            inputProps={{
+              autoComplete: "subject",
+              maxLength: 100,
+            }}
+          />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor="message">Mensaje</InputLabel>
+          <OutlinedInput
+            id="message"
+            label="Mensaje"
+            multiline
+            rows={4}
+            inputProps={{
+              minLength: 5,
+              maxLength: 1000,
+            }}
+            placeholder="Escribe tu mensaje aquí"
+            required
+          />
+        </FormControl>
+      </Grid>
+    </Grid>
   );
 }
