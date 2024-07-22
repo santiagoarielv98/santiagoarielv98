@@ -132,6 +132,7 @@ function ContactForm() {
           <InputLabel htmlFor="name">Tu Nombre</InputLabel>
           <OutlinedInput
             id="name"
+            name="name"
             label="Tu Nombre"
             inputProps={{
               autoComplete: "name",
@@ -147,6 +148,7 @@ function ContactForm() {
           <InputLabel htmlFor="email">Email</InputLabel>
           <OutlinedInput
             id="email"
+            name="email"
             label="Email"
             inputProps={{
               autoComplete: "email",
@@ -163,6 +165,7 @@ function ContactForm() {
           <InputLabel htmlFor="subject">Asunto</InputLabel>
           <OutlinedInput
             id="subject"
+            name="subject"
             label="Asunto"
             inputProps={{
               autoComplete: "subject",
@@ -176,6 +179,7 @@ function ContactForm() {
           <InputLabel htmlFor="message">Mensaje</InputLabel>
           <OutlinedInput
             id="message"
+            name="message"
             label="Mensaje"
             multiline
             rows={4}
