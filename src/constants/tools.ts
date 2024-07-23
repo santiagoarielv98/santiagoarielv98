@@ -92,12 +92,13 @@ export const backendTools: Tool[] = [
     icon: "mysql-logo",
     color: "#4479A1",
   },
-  {
+]
+  .map(GetIcon)
+  .concat({
     name: "PostgreSQL",
-    icon: "postgressql",
+    icon: "https://img.icons8.com/?size=24&id=38561&format=png&color=000000",
     color: "#336791",
-  },
-].map(GetIcon);
+  });
 
 export const cloudTools: Tool[] = [
   {
@@ -123,6 +124,6 @@ export const cloudTools: Tool[] = [
 ].map(GetIcon);
 
 export function GetIcon({ icon, ...rest }: Tool): Tool {
-  const base = "https://img.icons8.com/color/32/000000/";
+  const base = "https://img.icons8.com/color/24/000000/";
   return { icon: `${base}${icon}.png`, ...rest };
 }
