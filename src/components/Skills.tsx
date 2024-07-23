@@ -4,11 +4,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 
 import Section from "./Section";
 
+import Chip from "@mui/material/Chip";
 import { skills } from "../constants/skills";
 
 export default function Skills() {
@@ -42,7 +42,31 @@ export default function Skills() {
                   <List dense>
                     {skill.tools.map((tool, index) => (
                       <ListItem key={index}>
-                        <ListItemText primary={tool} />
+                        <Chip
+                          variant="outlined"
+                          avatar={
+                            <Avatar
+                              src={tool.icon}
+                              variant="rounded"
+                              slotProps={{
+                                img: { loading: "lazy" },
+                              }}
+                              sx={{
+                                filter: tool.inverted
+                                  ? (t) => (t.palette.mode === "dark" ? "invert(1)" : undefined)
+                                  : undefined,
+                              }}
+                            />
+                          }
+                          label={tool.name}
+                          sx={{
+                            pl: 0.5,
+                            borderColor: tool.color,
+                            bgcolor: tool.bgColor,
+                            color: tool.bgColor ? tool.color : undefined,
+                          }}
+                        />
+                        {/* <ListItemText primary={tool.name} /> */}
                       </ListItem>
                     ))}
                   </List>

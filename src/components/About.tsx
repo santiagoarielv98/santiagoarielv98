@@ -68,9 +68,9 @@ export default function About() {
               backend robustos{/*  y escalables */}.
             </Typography>
 
-            <Grid container py={2}>
+            <Grid container py={2} mb={2}>
               <Grid item xs={12} md={6}>
-                <List dense>
+                <List dense disablePadding>
                   {left.map((item, index) => (
                     <ListItem key={index}>
                       <ListItemIcon>{item.icon}</ListItemIcon>
@@ -86,7 +86,7 @@ export default function About() {
                 </List>
               </Grid>
               <Grid item xs={12} md={6}>
-                <List dense>
+                <List dense disablePadding>
                   {right.map((item, index) => (
                     <ListItem key={index}>
                       <ListItemIcon>{item.icon}</ListItemIcon>
