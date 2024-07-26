@@ -41,12 +41,20 @@ export default function Projects() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary" href={project.link} target="_blank" startIcon={<GitHubIcon />}>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    color="primary"
+                    href={project.link}
+                    target="_blank"
+                    startIcon={<GitHubIcon />}
+                  >
                     Ver código
                   </Button>
                   <Button
+                  variant="contained"
                     size="small"
-                    color="primary"
+                    color="secondary"
                     href={project.deployed}
                     target="_blank"
                     startIcon={<LaunchIcon />}

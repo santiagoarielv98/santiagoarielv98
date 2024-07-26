@@ -46,8 +46,12 @@ export default function Resume() {
                       display: { xs: "none", sm: "flex" },
                     }}
                   >
-                    <TimelineDot />
-                    <TimelineConnector />
+                    <TimelineDot color="primary" />
+                    <TimelineConnector
+                      sx={{
+                        bgcolor: "primary.dark",
+                      }}
+                    />
                   </TimelineSeparator>
                   <TimelineContent>
                     <Typography variant="h6" gutterBottom>
@@ -87,8 +91,8 @@ export default function Resume() {
                       display: { xs: "none", sm: "flex" },
                     }}
                   >
-                    <TimelineDot />
-                    <TimelineConnector />
+                    <TimelineDot color="secondary" />
+                    <TimelineConnector sx={{ bgcolor: "secondary.dark" }} />
                   </TimelineSeparator>
                   <TimelineContent>
                     <Typography variant="h6" gutterBottom>

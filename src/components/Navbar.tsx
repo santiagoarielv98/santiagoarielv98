@@ -33,12 +33,12 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <Box component="header">
-      <Toolbar sx={{ py: 1, justifyContent: "center" }}>
+      <Toolbar sx={{ py: 2, justifyContent: "center" }}>
         <Avatar alt="Avatar de Santiago" src={Profile} sx={{ width: 100, height: 100 }} />
       </Toolbar>
 
       <Divider />
-      <Box component="nav">
+      <Box component="nav" sx={{ px: 1 }}>
         <List>
           {navItems.map((item, index) => (
             <ListItem key={index} disablePadding>

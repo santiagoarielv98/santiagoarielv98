@@ -1,9 +1,9 @@
 import React from "react";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { ColorMode } from "../constants/theme";
 
@@ -42,6 +42,40 @@ export const ColorModeProvider = (props: ColorModeProviderProps) => {
       createTheme({
         palette: {
           mode: colorMode,
+          primary: {
+            light: "#757ce8",
+            main: "#3f50b5",
+            dark: "#002884",
+            contrastText: "#fff",
+          },
+          secondary: {
+            light: "#ff7961",
+            main: "#f44336",
+            dark: "#ba000d",
+            contrastText: "#000",
+          },
+          text: {
+            primary: colorMode === ColorMode.Light ? "#000" : "#fff",
+            secondary: colorMode === ColorMode.Light ? "#000" : "#fff",
+          },
+          action: {
+            active: colorMode === ColorMode.Light ? "#000" : "#fff",
+            selected: colorMode === ColorMode.Light ? "#000" : "#fff",
+          },
+          background: {
+            default: colorMode === ColorMode.Light ? "#f2f2f2" : "#121212",
+            paper: colorMode === ColorMode.Light ? "#fff" : "#1e1e1e",
+          },
+        },
+        components: {
+          MuiListItemButton: {
+            styleOverrides: {
+              root: {
+                borderRadius: 6,
+                marginTop: 8,
+              },
+            },
+          },
         },
       }),
     [colorMode]
