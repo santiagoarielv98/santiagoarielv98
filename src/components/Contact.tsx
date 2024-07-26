@@ -60,8 +60,7 @@ export default function Contact() {
 
   return (
     <Section id="contact">
-      <Container>
-        <Typography variant="h3" align="center" gutterBottom>
+      <Container>         <Typography variant="h3" align="center" sx={{mb: 4}}>
           Contacto
         </Typography>
         {/* <Typography variant="body1" align="center" paragraph> */}

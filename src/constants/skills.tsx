@@ -8,7 +8,7 @@ export interface Skill {
   description?: string;
   icon: JSX.Element;
   tools: Tool[];
-  color: "primary" | "secondary" | "info";
+  color: string;
 }
 
 export const skills: Skill[] = [
@@ -18,7 +18,7 @@ export const skills: Skill[] = [
     // "Me encanta crear interfaces de usuario interactivas y atractivas que brinden una experiencia intuitiva y fluida. Disfruto del proceso de diseño y desarrollo, asegurándome de que cada detalle esté bien cuidado.",
     icon: <WebIcon />,
     tools: frontendTools,
-    color: "primary",
+    color: "primary.main",
   },
   {
     title: "Backend",
@@ -26,7 +26,7 @@ export const skills: Skill[] = [
     //   "Me especializo en la lógica del servidor y el desarrollo de API, enfocándome en construir soluciones escalables y eficientes. Me apasiona asegurarme de que el backend sea robusto y de alto rendimiento.",
     icon: <StorageIcon />,
     tools: backendTools,
-    color: "secondary",
+    color: "secondary.main",
   },
   {
     title: "Cloud",
@@ -34,6 +34,6 @@ export const skills: Skill[] = [
     //   "Tengo experiencia trabajando con servicios en la nube, asegurándome de que las aplicaciones sean accesibles y seguras. Utilizo las mejores prácticas para la implementación y gestión en la nube.",
     icon: <CloudIcon />,
     tools: cloudTools,
-    color: "info",
+    color: "info.main",
   },
 ];

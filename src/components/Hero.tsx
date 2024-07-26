@@ -5,6 +5,9 @@ import Container from "@mui/material/Container";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+
+import Fab from "@mui/material/Fab";
 import HeroDarkBackground from "../assets/img/dark.webp";
 import HeroLightBackground from "../assets/img/light.webp";
 
@@ -39,13 +42,21 @@ export default function ProductHeroLayout() {
           alignItems: "center",
           zIndex: 1,
         }}
+        maxWidth="md"
       >
         <Typography color="inherit" align="center" variant="h2" component="h1">
-          Santiago Villanueva
+          😎 Santiago Villanueva
         </Typography>
-        <Typography color="inherit" align="center" variant="h5" sx={{ mb: 4, mt: { xs: 4, sm: 10 } }} paragraph>
-          Soy un desarrollador web full-stack
+
+        <Typography align="center" variant="h5" sx={{ mt: 4 }}>
+          Desarrollador Full Stack
         </Typography>
+        <Typography color="inherit" align="center" variant="h6" sx={{ mt: 2, mx: 2 }} paragraph>
+          Especializado en crear aplicaciones web de alto rendimiento con tecnologías innovadoras. 🚀
+        </Typography>
+        <Fab sx={{ mt: 8 }} color="primary" size="small" href="#about">
+          <ArrowDownwardIcon />
+        </Fab>
       </Container>
       <Box
         sx={{
@@ -62,7 +73,7 @@ export default function ProductHeroLayout() {
           backgroundImage: `url(${colorMode === "dark" ? HeroDarkBackground : HeroLightBackground})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(3px) brightness(0.5)",
+          filter: "blur(1.5px) brightness(0.4)",
         }}
       />
     </ProductHeroLayoutRoot>

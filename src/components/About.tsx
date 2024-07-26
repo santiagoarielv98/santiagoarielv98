@@ -17,19 +17,12 @@ export default function About() {
   return (
     <Section id="about">
       <Container>
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography variant="h3" align="center" sx={{mb: 4}}>
           Sobre mi
         </Typography>
-        {/* <Typography variant="body1" align="center" paragraph>
-          ¡Hola! Soy Santiago Villanueva, un desarrollador web full stack apasionado por la creación de aplicaciones web
-          eficientes y de alto rendimiento. */}
-        {/* Comprometido con el uso de las últimas tecnologías y prácticas de desarrollo
-          para ofrecer soluciones innovadoras. Con experiencia en desarrollo frontend y backend, siempre buscando nuevos
-          retos y oportunidades para crecer profesionalmente. */}
-        {/* </Typography> */}
       </Container>
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} lg={4}>
             <Avatar
               sx={{
@@ -46,7 +39,14 @@ export default function About() {
               alt="Avatar de Santiago"
             />
           </Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid
+            item
+            xs={12}
+            lg={8}
+            sx={{
+              mt: 4,
+            }}
+          >
             <Typography
               variant="h4"
               gutterBottom
@@ -102,19 +102,6 @@ export default function About() {
                 </List>
               </Grid>
             </Grid>
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{
-                textAlign: { xs: "center", lg: "left" },
-              }}
-            >
-              Con un enfoque en la mejora continua y la adopción de nuevas tecnologías
-              {/* , he trabajado en proyectos que
-              abarcan desde la optimización de interfaces de usuario hasta la implementación de servicios backend
-              complejos */}
-              . Siempre dispuesto a aprender y a colaborar en equipos dinámicos y multidisciplinarios.
-            </Typography>
           </Grid>
         </Grid>
       </Container>

@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <Section id="projects">
       <Container>
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography variant="h3" align="center" sx={{ mb: 8 }}>
           Proyectos
         </Typography>
         {/* <Typography variant="body1" align="center" paragraph>

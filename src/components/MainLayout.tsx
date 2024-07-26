@@ -56,6 +56,7 @@ export default function MainLayout(props: ResponsiveDrawerProps) {
       <Box sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }} aria-label="mailbox folders">
         <Drawer
           variant="temporary"
+          anchor="right"
           open={mobileOpen}
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}

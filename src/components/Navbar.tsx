@@ -36,13 +36,7 @@ export default function Navbar(props: NavbarProps) {
       <Toolbar sx={{ py: 1, justifyContent: "center" }}>
         <Avatar alt="Avatar de Santiago" src={Profile} sx={{ width: 100, height: 100 }} />
       </Toolbar>
-      <Divider />
-      <Stack direction="row" justifyContent="center" py={1}>
-        <Box component="label" htmlFor={switchThemeModeId} display="none" aria-hidden>
-          Cambiar tema
-        </Box>
-        <SwitchThemeMode id={switchThemeModeId} onClick={toggleColorMode} checked={colorMode === "dark"} />
-      </Stack>
+
       <Divider />
       <Box component="nav">
         <List>
@@ -74,6 +68,13 @@ export default function Navbar(props: NavbarProps) {
             {social.icon}
           </IconButton>
         ))}
+      </Stack>
+      <Divider />
+      <Stack direction="row" justifyContent="center" py={1}>
+        <Box component="label" htmlFor={switchThemeModeId} display="none" aria-hidden>
+          Cambiar tema
+        </Box>
+        <SwitchThemeMode id={switchThemeModeId} onClick={toggleColorMode} checked={colorMode === "dark"} />
       </Stack>
     </Box>
   );
