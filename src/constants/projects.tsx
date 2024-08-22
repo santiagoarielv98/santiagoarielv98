@@ -2,8 +2,16 @@ import CodoACodo from "../assets/img/projects/codo-a-codo.webp";
 import SvCountryApp from "../assets/img/projects/sv-country.webp";
 import SvFrontmentorSolutions from "../assets/img/projects/sv-frontendmentor.webp";
 import SvCocheriaRatti from "../assets/img/projects/sv-cocheria-ratti.webp";
+import SvGestionTarea from "../assets/img/projects/sv-gestion-tarea.webp";
 import Link from "@mui/material/Link";
 export const projects = [
+  {
+    title: "Gestion de Tareas",
+    description: "Aplicación web para gestionar tareas.",
+    link: "https://github.com/santiagoarielv98/sv-gestion-tarea",
+    image: SvGestionTarea,
+    deployed: "https://sv-gestion-tarea.web.app/",
+  },
   {
     title: "Cochería Ratti",
     description: (
@@ -30,7 +38,8 @@ export const projects = [
     description: "Proyecto integrador del curso de Codo a Codo.",
     link: "https://github.com/santiagoarielv98/codo-a-codo/tree/main/tp-integrador-front-2/codo-a-codo",
     image: CodoACodo,
-    deployed: "https://santiagoarielv98.github.io/codo-a-codo/tp-integrador-front-2/codo-a-codo/index.html",
+    deployed:
+      "https://santiagoarielv98.github.io/codo-a-codo/tp-integrador-front-2/codo-a-codo/index.html",
   },
   {
     title: "SV # World",
