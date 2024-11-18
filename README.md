@@ -1,12 +1,13 @@
 # **👋 Hola! Soy Santiago Villanueva**  
 
 Bienvenido a mi perfil de GitHub. Soy un **Desarrollador Full Stack** apasionado por crear aplicaciones web funcionales, eficientes y estéticamente atractivas. 🚀  
+
 [![Visitar Portfolio](https://img.shields.io/badge/-Visitar%20Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white)](https://santiagoarielv98.vercel.app/)
 
 ---
 
 ## **📖 Sobre mí**  
-- 🌍 Basado en Buenos Aires, Argentina.  
+- 🌍 Soy en Buenos Aires, Argentina.  
 - 🎓 Estudiante de Desarrollo de Software en el Instituto Técnico Superior Leopoldo Marechal.  
 - 💻 Trabajando con tecnologías como **React**, **Angular**, **Java**, **Spring Boot**, **Laravel** y más.  
 - 🌱 Actualmente aprendiendo y perfeccionando mis habilidades en **Linux** y herramientas de desarrollo modernas.  
