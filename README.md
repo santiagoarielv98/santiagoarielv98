@@ -1,6 +1,6 @@
 # Hola 👋, soy Santiago Ariel Villanueva
 
-### Desarrollador Full Stack | Next.js, React & AWS Cloud
+### Desarrollador Full Stack
 
 ## 🛠️ Mi Arsenal Tecnológico
 
